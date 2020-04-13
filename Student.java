@@ -6,7 +6,7 @@ public class Student{
    private int bus;
    private float gpa;
 
-   public Student(String ln, String fn, int grade, int room, int bus, int gpa){
+   public Student(String ln, String fn, int grade, int room, int bus, float gpa){
       this.lastName = ln;
       this.firstName = fn;
       this.grade = grade;

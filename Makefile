@@ -4,13 +4,13 @@ JC = javac
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
-CLASSES = lab1.java\
+CLASSES = schoolsearch.java\
 			 Student.java\
 			 Teacher.java
 
-default: lab1
+default:schoolsearch
 
-lab1: $(CLASSES:.java=.class)
+schoolsearch: $(CLASSES:.java=.class)
 
 clean:
 	$(RM) *.class

@@ -1,16 +1,50 @@
-import java.util.Scanner;
-import java.io.IOException; 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.*;
+import java.io.*; 
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
 
 class schoolsearch {
 
     static boolean finishSearch = false;
-    public static void main(String[] args) throws IOException  
-    {
-        
+    
+    public static void readFile(ArrayList<Student> st, ArrayList<Teacher> tc){
+       File file = new File("./students.txt");
+       try{
+         Scanner sc = new Scanner(file);
+         while(sc.hasNextLine()){
+            String line = sc.nextLine().trim();
+            String [] split = line.split(",");
+            //make student and teacher arraylists
+            Student s = new Student(split[0], split[1], 
+                  Integer.parseInt(split[2]), 
+                  Integer.parseInt(split[3]), 
+                  Integer.parseInt(split[4]), 
+                  Float.parseFloat(split[5]));
 
-        while (!finishSearch)
+            st.add(s);
+
+            Teacher t = new Teacher(split[6], split[7]);
+            tc.add(t);
+
+            //System.out.println(Arrays.toString(split));
+         }
+         sc.close();
+       }
+      catch(IOException e){
+         e.printStackTrace();
+      }
+    }
+    
+    
+    public static void main(String[] args) throws IOException{
+       ArrayList<Student> students = new ArrayList<>();
+       ArrayList<Teacher> teachers = new ArrayList<>();
+       
+       readFile(students, teachers); 
+       System.out.println(students.get(1).getLastName());
+        System.out.println(teachers.get(1).getLastName());
+
+       while (!finishSearch)
         {
             System.out.println("Please input search instruction:");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
