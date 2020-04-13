@@ -4,9 +4,10 @@ import java.io.*;
 class schoolsearch {
 
     static boolean finishSearch = false;
+    static ArrayList<Node> list = fileToList();
 
     public static void main(String[] args) throws IOException{
-       ArrayList<Node> list = fileToList();
+   //    ArrayList<Node> list = fileToList();
        for(Node n : list){
          n.printNode();
        }
@@ -215,6 +216,18 @@ class schoolsearch {
         {
             System.out.println("Search grade without any mode");
         }
+    }
+
+    static void highestGPA(int grade){
+      Node greatest = list.get(0);
+      for(int i = 1; i < list.size(); i++){
+         if(list.get(i).getGrade == grade){
+            if(list.get(i).getGpa() > greatest){
+               greatest = list.get(i);
+            }
+         }
+      }
+      System.out.println();
     }
 
     static void parseInputForAverage(Scanner in)
