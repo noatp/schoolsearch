@@ -4,34 +4,12 @@ import java.io.*;
 class schoolsearch {
 
     static boolean finishSearch = false;
-    
-    public static ArrayList<Node> fileToList(){
-      ArrayList<Node> nodeList = new ArrayList<>();
-      File file = new File("./students.txt");
-      try{
-         Scanner sc = new Scanner(file);
-         while(sc.hasNextLine()){
-            String line = sc.nextLine().trim();
-            String [] split = line.split(",");
-            Node n = new Node(split[0], split[1], 
-                        Integer.parseInt(split[2]), 
-                        Integer.parseInt(split[3]), 
-                        Integer.parseInt(split[4]), 
-                        Float.parseFloat(split[5]),
-                        split[6], split[7]);
-
-            nodeList.add(n);
-        }
-         sc.close();
-       }
-       catch(IOException e){
-         e.printStackTrace();
-       }
-       return nodeList;
-    }
 
     public static void main(String[] args) throws IOException{
        ArrayList<Node> list = fileToList();
+       for(Node n : list){
+         n.printNode();
+       }
 
        while (!finishSearch)
         {
@@ -276,4 +254,31 @@ class schoolsearch {
         System.out.print("S[tudent]: <lastname> [B[us]]\nT[eacher]: <lastname>\nB[us]: <number>\nG[rade]: <number> [H[igh]|L[ow]]\nA[verage]: <number>\nI[nfo]\nQ[uit]\n");
         return;
     }
+
+    static ArrayList<Node> fileToList(){
+      ArrayList<Node> nodeList = new ArrayList<>();
+      File file = new File("./students.txt");
+      try{
+         Scanner sc = new Scanner(file);
+         while(sc.hasNextLine()){
+            String line = sc.nextLine().trim();
+            String [] split = line.split(",");
+            Node n = new Node(split[0], split[1], 
+                        Integer.parseInt(split[2]), 
+                        Integer.parseInt(split[3]), 
+                        Integer.parseInt(split[4]), 
+                        Float.parseFloat(split[5]),
+                        split[6], split[7]);
+
+            nodeList.add(n);
+        }
+         sc.close();
+       }
+       catch(IOException e){
+         e.printStackTrace();
+       }
+       return nodeList;
+    }
+
+
 }
