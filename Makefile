@@ -5,8 +5,7 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = schoolsearch.java\
-			 Student.java\
-			 Teacher.java
+			 Node.java\
 
 default:schoolsearch
 
