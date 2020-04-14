@@ -1,3 +1,6 @@
+/*Group#19 
+ * Toan Chau, Kattia Chang, Nick Teng
+ */
 public class Node{
    private String lastName;
    private String firstName;

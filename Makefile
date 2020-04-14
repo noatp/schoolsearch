@@ -1,3 +1,6 @@
+#Group#19
+#Toan Chau, Kattia Chang, Nick Teng
+
 JFLAGS = -g
 JC = javac
 .SUFFIXES: .java .class
