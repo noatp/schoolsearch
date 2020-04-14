@@ -1,2 +1,0 @@
-// CSC 365. Spring 2020
-// Lab 1-1 test suite
