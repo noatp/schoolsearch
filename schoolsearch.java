@@ -4,11 +4,17 @@ import java.io.*;
 class schoolsearch {
 
     static boolean finishSearch = false;
-    static ArrayList<Node> list = fileToList();
+    static ArrayList<Node> list = new ArrayList<>();
+    static boolean fileFound = fileToList(list);
+    static int [] arr = new int[7];
+
 
     public static void main(String[] args) throws IOException{
-
-       while (!finishSearch)
+       if(!fileFound){
+         System.out.println("Required file not found...exiting program");
+       }
+       studentsPerGrade();
+       while (!finishSearch && fileFound)
         {
             System.out.print("Please input search instruction:");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -225,17 +231,14 @@ class schoolsearch {
     {
         if (mode == "h")
         {
-            System.out.println("Seach grade with mode High");
             highestGPA(number);
         }
         else if (mode == "l")
         {
-            System.out.println("Seach grade with mode Low");
             lowestGPA(number);
         }
         else if (mode == "na")
         {
-            System.out.println("Search grade without any mode");
             for (Node student : list)
             {
                 if(student.getGrade() == number)
@@ -247,27 +250,37 @@ class schoolsearch {
     }
 
     static void highestGPA(int grade){
-      Node greatest = list.get(0);
-      for(int i = 1; i < list.size(); i++){
-         if(list.get(i).getGrade() == grade){
-            if(list.get(i).getGpa() > greatest.getGpa()){
-               greatest = list.get(i);
+      if(arr[grade] == 0){
+         System.out.println("No students in this grade");
+      }
+      else{
+         Node greatest = list.get(0);
+         for(int i = 1; i < list.size(); i++){
+            if(list.get(i).getGrade() == grade){
+               if(list.get(i).getGpa() > greatest.getGpa()){
+                  greatest = list.get(i);
+               }
             }
          }
+         printGrade(greatest);
       }
-      printGrade(greatest);
     }
 
     static void lowestGPA(int grade){
-      Node lowest = list.get(0);
-      for(int i = 1; i < list.size(); i++){
-         if(list.get(i).getGrade() == grade){
-            if(list.get(i).getGpa() <  lowest.getGpa()){
-               lowest = list.get(i);
+      if(arr[grade] == 0){
+         System.out.println("No students in this grade");
+      }
+      else{
+         Node lowest = list.get(0);
+         for(int i = 1; i < list.size(); i++){
+            if(list.get(i).getGrade() == grade){
+               if(list.get(i).getGpa() <  lowest.getGpa()){
+                  lowest = list.get(i);
+               }
             }
          }
+         printGrade(lowest);
       }
-      printGrade(lowest);
     }
 
     static void printGrade(Node n){
@@ -293,7 +306,6 @@ class schoolsearch {
 
     static void searchAverage(int number)
     {
-        System.out.println("search average with number " + number);
         int counter = 0;
         float totalGPA = 0;
         for(Node n : list){
@@ -302,15 +314,17 @@ class schoolsearch {
                counter++;
             }
         }
-        totalGPA = totalGPA / counter;
-        System.out.println("Grade: " + number + " Average GPA: " + 
-                           String.format("%.2f", totalGPA));
+        if(counter > 0){
+           totalGPA = totalGPA / counter;
+           System.out.println("Grade: " + number + " Average GPA: " + 
+                              String.format("%.2f", totalGPA));
+        }
+        else{
+           System.out.println("No students in this grade"); 
+        }
     }
 
-    static void getInfo()
-    {
-        System.out.println("get info");
-        int [] arr = new int[7];
+    static void studentsPerGrade(){
         for(int i = 0; i < 7; i++){
            int totalStudents = 0;
            for(int j = 0; j < list.size(); j++){
@@ -320,7 +334,12 @@ class schoolsearch {
            }
            arr[i] = totalStudents;
         }
-        for(int k = 0 ; k < arr.length; k++){
+    }
+
+    static void getInfo()
+    {
+       System.out.println("G: # of students");
+       for(int k = 0 ; k < arr.length; k++){
             System.out.println(k + ": "+ arr[k]);
         }
     }
@@ -338,10 +357,10 @@ class schoolsearch {
         return;
     }
 
-    static ArrayList<Node> fileToList(){
-      ArrayList<Node> nodeList = new ArrayList<>();
-      File file = new File("./students.txt");
+    static boolean fileToList(ArrayList<Node> nodeList){
+      boolean isFile = true;
       try{
+         File file = new File("./students.txt");
          Scanner sc = new Scanner(file);
          while(sc.hasNextLine()){
             String line = sc.nextLine().trim();
@@ -358,8 +377,8 @@ class schoolsearch {
          sc.close();
        }
        catch(IOException e){
-         e.printStackTrace();
+         isFile = false;
        }
-       return nodeList;
+       return isFile;
     }
 }
