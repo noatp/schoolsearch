@@ -1,5 +1,5 @@
 import java.util.*;
-import java.io.*; 
+import java.io.*;
 
 class schoolsearch {
 
@@ -41,6 +41,7 @@ class schoolsearch {
                     break;
                 case "B:":
                     parseInputForBus(in);
+                    break;
 
                 case "Grade:":
                     parseInputForGrade(in);
@@ -79,12 +80,12 @@ class schoolsearch {
 
     }
 
-    
+
 
     static void parseInputForStudent(Scanner in)
     {
         String lastName = "";
-        int busNumber;
+        String busOption;
 
         if (in.hasNext())
         {
@@ -95,30 +96,42 @@ class schoolsearch {
             wrongInputFormat();
             return;
         }
-        
-        if (in.hasNextInt()) // has bus input
+
+        if (in.hasNext()) // has bus input
         {
-            busNumber = in.nextInt();
-            searchStudent(lastName, busNumber);
+            busOption = in.next();
+
+            if(busOption.equals("B")||busOption.equals("Bus"))
+            {
+                searchStudentBus(lastName);
+            }
         }
         else
         {
-            searchStudent(lastName, -1); // no bus input
+            searchStudentNoBus(lastName); // no bus input
         }
-
     }
 
-    static void searchStudent(String lastName, int busNumber)
+    static void searchStudentNoBus(String lastName)
     {
-        if (busNumber == -1) // no bus input
+        for (Node student : list)
         {
-            System.out.println("search student no bus input");
-            return;
+            if(student.getLastName().equals(lastName))
+            {
+                System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Grade: " + student.getGrade() + " Classroom: "
+                        + student.getRoom() + " Teacher: " + student.getTeachFirst() + " " + student.getTeachLast());
+            }
         }
-        else // has bus input
+    }
+
+    static void searchStudentBus(String lastName)
+    {
+        for (Node student : list)
         {
-            System.out.println("search student with but input");
-            return;
+            if(student.getLastName().equals(lastName))
+            {
+                System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Bus Route: " + student.getBus());
+            }
         }
     }
 
@@ -140,7 +153,13 @@ class schoolsearch {
 
     static void searchTeacher(String lastName)
     {
-        System.out.println("search for teacher with " + lastName);
+        for (Node student : list)
+        {
+            if(student.getTeachLast().equals(lastName))
+            {
+                System.out.println("Student: " + student.getFirstName() + ", " + student.getLastName());
+            }
+        }
     }
 
     static void parseInputForBus(Scanner in)
@@ -161,7 +180,13 @@ class schoolsearch {
 
     static void searchBus(int busNumber)
     {
-        System.out.println("search bus with bus number " + busNumber);
+        for (Node student : list)
+        {
+            if(student.getBus() == busNumber)
+            {
+                System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Grade: " + student.getGrade() + " Classroom: " + student.getRoom());
+            }
+        }
     }
 
     static void parseInputForGrade(Scanner in)
@@ -217,6 +242,13 @@ class schoolsearch {
         else if (mode == "na")
         {
             System.out.println("Search grade without any mode");
+            for (Node student : list)
+            {
+                if(student.getGrade() == number)
+                {
+                    System.out.println("Student: " + student.getFirstName() + " " + student.getLastName());
+                }
+            }
         }
     }
 
@@ -246,7 +278,7 @@ class schoolsearch {
 
     static void printGrade(Node n){
       System.out.println("Student: " + n.getFirstName() + " " + n.getLastName()
-            + "GPA: " + n.getGpa() + " Teacher: " + n.getTeachFirst() + " " + 
+            + "GPA: " + n.getGpa() + " Teacher: " + n.getTeachFirst() + " " +
             n.getTeachLast() + " Bus Route: " + n.getBus());
     }
 
