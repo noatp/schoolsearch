@@ -114,24 +114,36 @@ class schoolsearch {
 
     static void searchStudentNoBus(String lastName)
     {
+        int counter = 0;
         for (Node student : list)
         {
             if(student.getLastName().equals(lastName))
             {
                 System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Grade: " + student.getGrade() + " Classroom: "
                         + student.getRoom() + " Teacher: " + student.getTeachFirst() + " " + student.getTeachLast());
+                counter++;
             }
+        }
+        if(counter == 0)
+        {
+            System.out.println("No students with this last name");
         }
     }
 
     static void searchStudentBus(String lastName)
     {
+        int counter = 0;
         for (Node student : list)
         {
             if(student.getLastName().equals(lastName))
             {
                 System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Bus Route: " + student.getBus());
+                counter++;
             }
+        }
+        if(counter == 0)
+        {
+            System.out.println("No students with this last name");
         }
     }
 
@@ -153,12 +165,18 @@ class schoolsearch {
 
     static void searchTeacher(String lastName)
     {
+        int counter = 0;
         for (Node student : list)
         {
             if(student.getTeachLast().equals(lastName))
             {
                 System.out.println("Student: " + student.getFirstName() + ", " + student.getLastName());
+                counter++;
             }
+        }
+        if(counter == 0)
+        {
+            System.out.println("No teacher with this last name");
         }
     }
 
@@ -180,12 +198,18 @@ class schoolsearch {
 
     static void searchBus(int busNumber)
     {
+        int counter = 0;
         for (Node student : list)
         {
             if(student.getBus() == busNumber)
             {
+                counter++;
                 System.out.println("Student: " + student.getFirstName() + " " + student.getLastName() + " Grade: " + student.getGrade() + " Classroom: " + student.getRoom());
             }
+        }
+        if(counter == 0)
+        {
+            System.out.println("Not a valid bus route");
         }
     }
 
@@ -246,6 +270,10 @@ class schoolsearch {
                     System.out.println("Student: " + student.getFirstName() + " " + student.getLastName());
                 }
             }
+            if(arr[number] == 0)
+            {
+                System.out.println("No students in this grade");
+            }
         }
     }
 
@@ -285,7 +313,7 @@ class schoolsearch {
 
     static void printGrade(Node n){
       System.out.println("Student: " + n.getFirstName() + " " + n.getLastName()
-            + "GPA: " + n.getGpa() + " Teacher: " + n.getTeachFirst() + " " +
+            + " GPA: " + n.getGpa() + " Teacher: " + n.getTeachFirst() + " " +
             n.getTeachLast() + " Bus Route: " + n.getBus());
     }
 
