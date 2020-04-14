@@ -1,0 +1,74 @@
+// CSC 365. Spring 2020
+// Lab 1-1 test suite
+
+//TC-1 
+//Test requirement R4 and R10
+//Long form command name, existing students in grade
+//expected output: Grade: 4 Average GPA: 2.95 
+
+Average: 4
+
+//TC-2 
+//Test requirement R4 and R10
+//Long form command name, no existing students in grade
+//expected output: No students in this grade
+
+Average: 5
+
+//TC-3 
+//Test requirement R4 and R10
+//Short form command name, existing students in grade
+//expected output: Grade: 4 Average GPA: 2.95 
+
+A: 4
+
+//TC-4 
+//Test requirement R4 and R10
+//Short form command name, no existing students in grade
+//expected output: No students in this grade
+
+A: 5
+
+//TC-5
+//Test requirement R4 and R11
+//Long form command name
+//expected output: G: # of students
+//                 0: 0
+//                 1: 2
+//                 2: 13
+//                 3: 9
+//                 4: 15
+//                 5: 0
+//                 6: 21
+
+Info
+
+//TC-6
+//Test requirement R4 and R11
+//Short form command name
+//expected output: G: # of students
+//                 0: 0
+//                 1: 2
+//                 2: 13
+//                 3: 9
+//                 4: 15
+//                 5: 0
+//                 6: 21
+
+I
+
+//TC-7
+//Test requirement R3 and R13
+//Long form quit command
+//expected output: program terminates
+
+Quit
+
+//TC-8
+//Test requirement R3 and R13
+//Short form quit command
+//expected output: program terminates
+
+Q
+
+

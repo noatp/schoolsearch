@@ -1,0 +1,41 @@
+Script started on 2020-04-14 13:51:11-0700
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ java schoolsearch 
+Please input search instruction:Average: 4
+Grade: 4 Average GPA: 2.95
+Please input search instruction:A: 4   verage: 5
+No students in this grade
+Please input search instruction:A: 4
+Grade: 4 Average GPA: 2.95
+Please input search instruction:A: 5
+No students in this grade
+Please input search instruction:Info
+G: # of students
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please input search instruction:I
+G: # of students
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+Please input search instruction:Quit
+Goodbye!
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ exit
+
+Script done on 2020-04-14 13:52:37-0700
+
+Script started on 2020-04-14 13:55:38-0700
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ java schoolsearch 
+Please input search instruction:q Q
+Goodbye!
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ exit
+
+Script done on 2020-04-14 13:56:01-0700
