@@ -8,13 +8,9 @@ class schoolsearch {
 
     public static void main(String[] args) throws IOException{
 
-       for(Node n : list){
-         n.printNode();
-       }
-
        while (!finishSearch)
         {
-            System.out.println("Please input search instruction:");
+            System.out.print("Please input search instruction:");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String userInput = reader.readLine();
             Scanner in = new Scanner(userInput);
@@ -75,8 +71,6 @@ class schoolsearch {
                     break;
             }
         }
-        
-
     }
 
     
@@ -268,11 +262,35 @@ class schoolsearch {
     static void searchAverage(int number)
     {
         System.out.println("search average with number " + number);
+        int counter = 0;
+        float totalGPA = 0;
+        for(Node n : list){
+            if(n.getGrade() == number){
+               totalGPA += n.getGpa();
+               counter++;
+            }
+        }
+        totalGPA = totalGPA / counter;
+        System.out.println("Grade: " + number + " Average GPA: " + 
+                           String.format("%.2f", totalGPA));
     }
 
     static void getInfo()
     {
         System.out.println("get info");
+        int [] arr = new int[7];
+        for(int i = 0; i < 7; i++){
+           int totalStudents = 0;
+           for(int j = 0; j < list.size(); j++){
+              if(list.get(j).getGrade() == i){
+                  totalStudents++;
+              }
+           }
+           arr[i] = totalStudents;
+        }
+        for(int k = 0 ; k < arr.length; k++){
+            System.out.println(k + ": "+ arr[k]);
+        }
     }
 
     static void finishProgram()
@@ -312,6 +330,4 @@ class schoolsearch {
        }
        return nodeList;
     }
-
-
 }
