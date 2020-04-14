@@ -7,7 +7,7 @@ class schoolsearch {
     static ArrayList<Node> list = fileToList();
 
     public static void main(String[] args) throws IOException{
-   //    ArrayList<Node> list = fileToList();
+
        for(Node n : list){
          n.printNode();
        }
@@ -207,10 +207,12 @@ class schoolsearch {
         if (mode == "h")
         {
             System.out.println("Seach grade with mode High");
+            highestGPA(number);
         }
         else if (mode == "l")
         {
             System.out.println("Seach grade with mode Low");
+            lowestGPA(number);
         }
         else if (mode == "na")
         {
@@ -221,13 +223,31 @@ class schoolsearch {
     static void highestGPA(int grade){
       Node greatest = list.get(0);
       for(int i = 1; i < list.size(); i++){
-         if(list.get(i).getGrade == grade){
-            if(list.get(i).getGpa() > greatest){
+         if(list.get(i).getGrade() == grade){
+            if(list.get(i).getGpa() > greatest.getGpa()){
                greatest = list.get(i);
             }
          }
       }
-      System.out.println();
+      printGrade(greatest);
+    }
+
+    static void lowestGPA(int grade){
+      Node lowest = list.get(0);
+      for(int i = 1; i < list.size(); i++){
+         if(list.get(i).getGrade() == grade){
+            if(list.get(i).getGpa() <  lowest.getGpa()){
+               lowest = list.get(i);
+            }
+         }
+      }
+      printGrade(lowest);
+    }
+
+    static void printGrade(Node n){
+      System.out.println("Student: " + n.getFirstName() + " " + n.getLastName()
+            + "GPA: " + n.getGpa() + " Teacher: " + n.getTeachFirst() + " " + 
+            n.getTeachLast() + " Bus Route: " + n.getBus());
     }
 
     static void parseInputForAverage(Scanner in)
