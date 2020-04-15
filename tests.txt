@@ -71,4 +71,96 @@ Quit
 
 Q
 
+//TC-9
+//Test requirement R8
+//Short form command for bus, with existing bus
+//expected output:
+//Seetudent: XUAN COOKUS Grade: 3 Classroom: 107
+//Student: SHANTE ELHADDAD Grade: 3 Classroom: 107
+//Student: DEVIN IMMERMAN Grade: 4 Classroom: 105
+//Student: STAN OBREIN Grade: 6 Classroom: 111
+//Student: DIMPLE CORONADO Grade: 6 Classroom: 102
+//Student: DIEDRA SARAO Grade: 2 Classroom: 108
+//Student: TORY EARLY Grade: 3 Classroom: 107
+//Student: ROSETTA KEMERER Grade: 6 Classroom: 102
+
+Bus: 52
+
+//TC-10
+//Test requirement R8
+//Long form command for bus, with existing bus
+//expected output:
+//Student: NOEL RACANELLO Grade: 6 Classroom: 102
+//Student: EMMANUEL VILARDO Grade: 2 Classroom: 104
+//Student: VALENTIN KRAKE Grade: 6 Classroom: 109
+//Student: INGER BEAN Grade: 6 Classroom: 111
+//Student: BILLY BUSSMANN Grade: 2 Classroom: 108
+//Student: WILFREDO FEYEREISEN Grade: 6 Classroom: 111
+
+Bus: 56
+
+//TC-11
+//Test requirement R8
+//Long form command for bus, with invalid bus
+//expected output:
+//Not a valid bus route
+
+Bus: 1000
+
+//TC-12
+//Test requirement R7
+//Long form command for grade, with valid grade
+//expected output: 
+//Student: DANILO SAELEE
+//Student: JOHN GARTH
+
+Grade: 1
+
+//TC-13
+//Test requirement R7
+//Short form command for grade, with valid grade
+//expected output:
+//No students in this grade
+
+G: 0
+
+//TC-14
+//Test requirement R7
+//Short form command for grade, with invalid grade
+//expected output:
+//Not a valid grade
+
+G: 10
+
+//TC-15
+//Test requirement R9
+//Short form command for grade, with valid grade and keyword High
+//expected output:
+//Student: JOHN GARTH GPA: 3.14 Teacher: ADOLPH FALKER Bus Route: 0
+
+G: 1 High
+
+//TC-16
+//Test requirement R9
+//Long form command for grade, with valid grade and keyword Low
+//expected output:
+//Student: DANILO SAELEE GPA: 2.85 Teacher: ADOLPH FALKER Bus Route: 54
+
+Grade: 1 Low
+
+//TC-16
+//Test requirement R3
+//Long form command for grade, with valid grade and invalid keyword
+//expected output:
+//Only these following command formats are supported:
+//S[tudent]: <lastname> [B[us]]
+//T[eacher]: <lastname>
+//B[us]: <number>
+//G[rade]: <number> [H[igh]|L[ow]]
+//A[verage]: <number>
+//I[nfo]
+//Q[uit]
+
+Grade: 2 What
+
 

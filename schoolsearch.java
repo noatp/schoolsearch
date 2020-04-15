@@ -225,6 +225,11 @@ class schoolsearch {
         if (in.hasNextInt())
         {
             number = in.nextInt();
+            if (number > 6 || number < 0)
+            {
+                System.out.println("Not a valid grade");
+                return;
+            }
         }
         else
         {
