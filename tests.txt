@@ -2,35 +2,35 @@
 // Lab 1-1 test suite
 
 //TC-1 
-//Test requirement R4 and R10
+//Test requirement R3 and R10
 //Long form command name, existing students in grade
 //expected output: Grade: 4 Average GPA: 2.95 
 
 Average: 4
 
 //TC-2 
-//Test requirement R4 and R10
+//Test requirement R3 and R10
 //Long form command name, no existing students in grade
 //expected output: No students in this grade
 
 Average: 5
 
 //TC-3 
-//Test requirement R4 and R10
+//Test requirement R3 and R10
 //Short form command name, existing students in grade
 //expected output: Grade: 4 Average GPA: 2.95 
 
 A: 4
 
 //TC-4 
-//Test requirement R4 and R10
+//Test requirement R3 and R10
 //Short form command name, no existing students in grade
 //expected output: No students in this grade
 
 A: 5
 
 //TC-5
-//Test requirement R4 and R11
+//Test requirement R3 and R11
 //Long form command name
 //expected output: G: # of students
 //                 0: 0
@@ -44,7 +44,7 @@ A: 5
 Info
 
 //TC-6
-//Test requirement R4 and R11
+//Test requirement R3 and R11
 //Short form command name
 //expected output: G: # of students
 //                 0: 0
@@ -148,7 +148,7 @@ G: 1 High
 
 Grade: 1 Low
 
-//TC-16
+//TC-17
 //Test requirement R3
 //Long form command for grade, with valid grade and invalid keyword
 //expected output:
@@ -163,4 +163,86 @@ Grade: 1 Low
 
 Grade: 2 What
 
+//TC-18
+//Test requirements R3, R4
+//Short form command for student, with existing lastname
+//expected output:
+//Student: TOMAS COVINGTON Grade: 3 Classroom: 107 Teacher: ROCIO FAFARD
 
+S: COVINGTON
+
+//TC-19
+//Test requirements R3, R4
+//Short form command for student, with non-existing lastname
+//expected output:
+//No students with this last name
+
+S: NONAME
+
+//TC-20
+//Test requirements R3, R4
+//Long form command for student, with existing lastname
+//expected output:
+//Student: STAN OBREIN Grade: 6 Classroom: 111 Teacher: NANCY NISTENDIRK
+
+Student: OBREIN
+
+//TC-21
+//Test requirements R3, R5
+//Short form command for student and short form command for bus, with existing lastname
+//expected output:
+//Student: TOMAS COVINGTON Bus Route: 51
+
+S: COVINGTON B
+
+//TC-22
+//Test requirements R3, R5
+//Short form command for student and long form command for bus, with non-existing lastname
+//expected output:
+//Student: No students with this last name
+
+S: NONAME Bus
+
+//TC-23
+//Test requirements R3, R4
+//Long form command for student and long form command for bus, with existing lastname
+//expected output:
+//Student: STAN OBREIN Bus Route: 52
+
+Student: OBREIN Bus
+
+//TC-24
+//Test requirements R3, R6
+//Short form command for teacher, with existing lastname
+//expected output:
+//Student: PETER, STERBACK
+//Student: MATHILDA, FINCHMAN
+//Student: STAN, OBREIN
+//Student: NUMBERS, SAENPHIMMACHA
+//Student: JANNETTE, BREVO
+//Student: INGER, BEAN
+//Student: WILFREDO, FEYEREISEN
+//Student: LEON, WERST
+//Student: TAMA, LAMKIN
+
+T: NISTENDIRK
+
+//TC-25
+//Test requirements R3, R6
+//Long form command for teacher, with existing lastname
+//expected output:
+//Student: NOEL, RACANELLO
+//Student: DIMPLE, CORONADO
+//Student: WAN, BOYTER
+//Student: ROSETTA, KEMERER
+//Student: DEWAYNE, DEMARTINI
+
+Teacher: KERBS
+
+//TC-26
+//Test requirements R3, R6
+//Long form command for teacher, with non-existing lastname
+//expected output:
+//No teacher with this last name
+
+Teacher: NONAME
