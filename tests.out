@@ -39,3 +39,51 @@ Goodbye!
 ]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ exit
 
 Script done on 2020-04-14 13:56:01-0700
+
+
+Script started on Tue Apr 14 17:49:31 2020
+[?1034hbash-3.2$ java schoolsearch
+Please input search instruction:Bus: 52
+Student: XUAN COOKUS Grade: 3 Classroom: 107
+Student: SHANTE ELHADDAD Grade: 3 Classroom: 107
+Student: DEVIN IMMERMAN Grade: 4 Classroom: 105
+Student: STAN OBREIN Grade: 6 Classroom: 111
+Student: DIMPLE CORONADO Grade: 6 Classroom: 102
+Student: DIEDRA SARAO Grade: 2 Classroom: 108
+Student: TORY EARLY Grade: 3 Classroom: 107
+Student: ROSETTA KEMERER Grade: 6 Classroom: 102
+Please input search instruction:Bus: 56
+Student: NOEL RACANELLO Grade: 6 Classroom: 102
+Student: EMMANUEL VILARDO Grade: 2 Classroom: 104
+Student: VALENTIN KRAKE Grade: 6 Classroom: 109
+Student: INGER BEAN Grade: 6 Classroom: 111
+Student: BILLY BUSSMANN Grade: 2 Classroom: 108
+Student: WILFREDO FEYEREISEN Grade: 6 Classroom: 111
+Please input search instruction:Bug s: 1000
+Not a valid bus route
+Please input search instruction:Grade: 1
+Student: DANILO SAELEE
+Student: JOHN GARTH
+Please input search instruction:Grade:       : 0
+No students in this grade
+Please input search instruction:G: 10
+Not a valid grade
+Please input search instruction:G: 1 High
+Student: JOHN GARTH GPA: 3.14 Teacher: ADOLPH FALKER Bus Route: 0
+Please input search instruction:Grade: 1 Low
+Student: DANILO SAELEE GPA: 2.85 Teacher: ADOLPH FALKER Bus Route: 54
+Please input search instruction:Grade: 2 What
+Only these following command formats are supported:
+S[tudent]: <lastname> [B[us]]
+T[eacher]: <lastname>
+B[us]: <number>
+G[rade]: <number> [H[igh]|L[ow]]
+A[verage]: <number>
+I[nfo]
+Q[uit]
+Please input search instruction:quit    Q
+Goodbye!
+bash-3.2$ exit
+exit
+
+Script done on Tue Apr 14 17:51:15 2020
