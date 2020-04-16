@@ -87,3 +87,42 @@ bash-3.2$ exit
 exit
 
 Script done on Tue Apr 14 17:51:15 2020
+
+Script started on 2020-04-15 16:52:17-07:00 [TERM="cygwin" TTY="/dev/cons0" COLUMNS="120" LINES="30"]
+sh-4.4$ java schoolsearch
+Please input search instruction:S: COVINGTON
+Student: TOMAS COVINGTON Grade: 3 Classroom: 107 Teacher: ROCIO FAFARD
+Please input search instruction:S: NONAME
+No students with this last name
+Please input search instruction:Student: OBREIN
+Student: STAN OBREIN Grade: 6 Classroom: 111 Teacher: NANCY NISTENDIRK
+Please input search instruction:S: COVINGTON B
+Student: TOMAS COVINGTON Bus Route: 51
+Please input search instruction:S: NONAME Bus
+No students with this last name
+Please input search instruction:Student: OBREIN Bus
+Student: STAN OBREIN Bus Route: 52
+Please input search instruction:T: NISTENDIRK
+Student: PETER, STERBACK
+Student: MATHILDA, FINCHMAN
+Student: STAN, OBREIN
+Student: NUMBERS, SAENPHIMMACHA
+Student: JANNETTE, BREVO
+Student: INGER, BEAN
+Student: WILFREDO, FEYEREISEN
+Student: LEON, WERST
+Student: TAMA, LAMKIN
+Please input search instruction:Teacher: KERBS
+Student: NOEL, RACANELLO
+Student: DIMPLE, CORONADO
+Student: WAN, BOYTER
+Student: ROSETTA, KEMERER
+Student: DEWAYNE, DEMARTINI
+Please input search instruction:Teacher: NONAME
+No teacher with this last name
+Please input search instruction:Q
+Goodbye!
+
+sh-4.4$ exit
+
+Script done on 2020-04-15 16:55:26-07:00 [COMMAND_EXIT_CODE="0"]
