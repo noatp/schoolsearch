@@ -9,7 +9,7 @@ class schoolsearch {
 
     static boolean finishSearch = false;
     static ArrayList<Node> list = new ArrayList<>();
-    static boolean fileFound = fileToList(list);
+    static boolean fileFound = fileExists();
     static int [] arr = new int[7];
 
 
@@ -17,14 +17,16 @@ class schoolsearch {
        if(!fileFound){
          System.out.println("Required file not found...exiting program");
        }
-       studentsPerGrade();
-       while (!finishSearch && fileFound)
-        {
+       else{
+         fileToList(list);
+         addTeacherToList(list);
+         studentsPerGrade();
+         
+         while (!finishSearch && fileFound){
             System.out.print("Please input search instruction:");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String userInput = reader.readLine();
             Scanner in = new Scanner(userInput);
-            
 
             switch (in.next())
             {
@@ -81,7 +83,8 @@ class schoolsearch {
                     wrongInputFormat();
                     break;
             }
-        }
+         }
+       }
     }
 
 
@@ -394,28 +397,62 @@ class schoolsearch {
         return;
     }
 
-    static boolean fileToList(ArrayList<Node> nodeList){
-      boolean isFile = true;
+    static void fileToList(ArrayList<Node> nodeList){
       try{
-         File file = new File("./students.txt");
+         File file = new File("./list.txt");
          Scanner sc = new Scanner(file);
          while(sc.hasNextLine()){
             String line = sc.nextLine().trim();
             String [] split = line.split(",");
             Node n = new Node(split[0], split[1], 
-                        Integer.parseInt(split[2]), 
-                        Integer.parseInt(split[3]), 
-                        Integer.parseInt(split[4]), 
-                        Float.parseFloat(split[5]),
-                        split[6], split[7]);
+                        Integer.parseInt(split[2]), //grade 
+                        Integer.parseInt(split[3]), //class
+                        Integer.parseInt(split[4]), // bus
+                        Float.parseFloat(split[5]), // GPA
+                        "", ""); //empty TlastName and TFirstName
 
             nodeList.add(n);
         }
          sc.close();
        }
        catch(IOException e){
-         isFile = false;
+         System.out.println("you shouldn't be seeing this error");
        }
-       return isFile;
+    }
+
+
+    static void addTeacher(ArrayList<Node> nodeList, String last, String first, int room){
+      for(Node n : nodeList){
+         if(n.getRoom() == room){
+            n.setTeachLast(last);
+            n.setTeachFirst(first);
+         }
+      } 
+    }
+
+    static void addTeacherToList(ArrayList<Node> nodeList){
+      try{
+         File teachers = new File("./teachers.txt");
+         Scanner sc = new Scanner(teachers);
+         while(sc.hasNextLine()){
+            String line = sc.nextLine().trim();
+            String [] split = line.split(", ");
+            addTeacher(nodeList, split[0], split[1], Integer.parseInt(split[2])); 
+         }
+         sc.close();
+      }
+      catch(IOException e){
+         System.out.println("you shouldn't be seeing this error"); 
+      }
+    }
+
+    static boolean fileExists(){
+      boolean result = false;
+      File list = new File("./list.txt");
+      File teachers = new File("./teachers.txt");
+      if(list.exists() && teachers.exists()){
+         result = true;
+      }
+      return result;
     }
 }
