@@ -71,7 +71,14 @@ class schoolsearch {
                 case "I":
                     getInfo();
                     break;
-                
+
+                case "Analytics:":
+                    parseInputForAnalytics(in);
+                    break;
+                case "An:":
+                    parseInputForAnalytics(in);
+                    break;
+       
                 case "Q":
                     finishProgram();
                     break;
@@ -86,8 +93,6 @@ class schoolsearch {
          }
        }
     }
-
-
 
     static void parseInputForStudent(Scanner in)
     {
@@ -384,6 +389,36 @@ class schoolsearch {
         }
     }
 
+    static void parseInputForAnalytics(Scanner in){
+
+       if(in.hasNext()){
+         String cmd = in.next();
+         if((cmd.equals("Grade") || cmd.equals("G"))  && in.hasNextInt()){
+            int grade = in.nextInt();
+            //TODO gradeSearchGPA(grade);
+            System.out.println("cmd: " + cmd + "grade: " + grade);    
+         }
+         else if((cmd.equals("Teacher") || cmd.equals("T")) && in.hasNext()){
+            String lastname = in.next();
+            //TODO teacherSearchGPA(lastname);
+            System.out.println("cmd: " + cmd + "ln: " + lastname); 
+         }
+
+         else if((cmd.equals("Bus") || cmd.equals("B")) && in.hasNextInt()){
+            int bus = in.nextInt();
+            //TODO busSearchGPA(bus);
+            System.out.println("cmd: " + cmd + "bus: " + bus); 
+         }
+
+         else{
+            wrongInputFormat();  
+         }
+       }
+       else{
+         wrongInputFormat();
+       }
+    }
+
     static void finishProgram()
     {
         System.out.println("Goodbye!");
@@ -393,7 +428,12 @@ class schoolsearch {
     static void wrongInputFormat()
     {
         System.out.println("Only these following command formats are supported:");
-        System.out.print("S[tudent]: <lastname> [B[us]]\nT[eacher]: <lastname>\nB[us]: <number>\nG[rade]: <number> [H[igh]|L[ow]]\nA[verage]: <number>\nI[nfo]\nQ[uit]\n");
+        System.out.print("S[tudent]: <lastname>[B[us]]"
+              +"\nT[eacher]: <lastname>\nB[us]: <number>"
+              +"\nG[rade]: <number> [H[igh]|L[ow]]\nA[verage]: <number>"
+              +"\nI[nfo]" 
+              +"\nAn[alyticts]: G[rade] <number>|T[eacher] <lastname>|B[us] <number>" 
+              +"\nQ[uit]\n");
         return;
     }
 
