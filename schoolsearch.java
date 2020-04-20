@@ -78,6 +78,13 @@ class schoolsearch {
                 case "An:":
                     parseInputForAnalytics(in);
                     break;
+
+                case "Classroom:":
+                    parseInputForClassroom(in);
+                    break;
+                case "C:":
+                    parseInputForClassroom(in);
+                    break;
        
                 case "Q":
                     finishProgram();
@@ -437,6 +444,78 @@ class schoolsearch {
        }
     }
 
+    static void parseInputForClassroom(Scanner in)
+    {
+        int classroom = 0;
+        String mode = "";
+
+        if (in.hasNextInt())
+        {
+            classroom = in.nextInt();
+            if (classroom > 112 || classroom < 101)
+            {
+                System.out.println("Not a valid classroom number");
+                return;
+            }
+        }
+        else
+        {
+            wrongInputFormat();
+            return;
+        }
+
+        if (in.hasNext())
+        {
+            mode = in.next();
+            searchClassroom(classroom, mode);
+        }
+        else
+        {
+            wrongInputFormat();
+            return;
+        }
+    }
+
+    static void searchClassroom(int classroomNumber, String mode)
+    {
+        if (mode.equals("Student"))
+        {
+            int counter = 0;
+
+            for (Node student : list)
+            {
+                if(student.getRoom() == classroomNumber)
+                {
+                    System.out.println("Student: " + student.getFirstName() + " " + student.getLastName());
+                    counter++;
+                }
+            }
+            if(counter == 0)
+            {
+                System.out.println("No students are assigned to this classroom number");
+            }
+            return;
+        }
+        else if (mode.equals("Teacher"))
+        {
+            for (Node student : list)
+            {
+                if (student.getRoom() == classroomNumber)
+                {
+                    System.out.println("Teacher: " + student.getTeachFirst() + " " + student.getTeachLast());
+                    return;                
+                }
+            }
+            System.out.println("No teacher is teaching in this classroom");
+            return;
+        }
+        else
+        {
+            System.out.println("Invalid mode");
+            return;
+        }
+    }
+
     static void finishProgram()
     {
         System.out.println("Goodbye!");
@@ -451,6 +530,7 @@ class schoolsearch {
               +"\nG[rade]: <number> [H[igh]|L[ow]]\nA[verage]: <number>"
               +"\nI[nfo]" 
               +"\nAn[alyticts]: G[rade] <number>|T[eacher] <lastname>|B[us] <number>" 
+              +"\nC[lassroom]: <classroom number> Student|Teacher"
               +"\nQ[uit]\n");
         return;
     }
