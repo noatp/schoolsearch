@@ -160,3 +160,49 @@ Goodbye!
 ]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ exit
 
 Script done on 2020-04-19 18:42:24-0700
+
+Script started on 2020-04-20 14:08:35-07:00 [TERM="cygwin" TTY="/dev/cons0" COLUMNS="120" LINES="30"]
+sh-4.4$ java schoolsearch
+Please input search instruction:Grade: 3 Teacher
+Teacher: ROCIO FAFARD
+Teacher: JONATHAN ALPERT
+Please input search instruction:G: 6 T
+Teacher: JAE GAMBREL
+Teacher: BENITO KERBS
+Teacher: NANCY NISTENDIRK
+Teacher: LUZ BODZIONY
+Please input search instruction:G: 5 Teacher
+No students in this grade
+Please input search instruction:E
+Classroom 101: 1
+Classroom 102: 5
+Classroom 103: 2
+Classroom 104: 2
+Classroom 105: 6
+Classroom 106: 2
+Classroom 107: 7
+Classroom 108: 11
+Classroom 109: 5
+Classroom 110: 2
+Classroom 111: 9
+Classroom 112: 8
+Please input search instruction:Enrollment
+Classroom 101: 1
+Classroom 102: 5
+Classroom 103: 2
+Classroom 104: 2
+Classroom 105: 6
+Classroom 106: 2
+Classroom 107: 7
+Classroom 108: 11
+Classroom 109: 5
+Classroom 110: 2
+Classroom 111: 9
+Classroom 112: 8
+Please input search instruction:Q
+Goodbye!
+
+sh-4.4$ exit
+exit
+
+Script done on 2020-04-20 14:11:55-07:00 [COMMAND_EXIT_CODE="0"]

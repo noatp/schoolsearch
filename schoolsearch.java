@@ -321,6 +321,13 @@ class schoolsearch {
         ArrayList<String> teacherNames = new ArrayList<>();
         String TeacherName;
         boolean uniqueName = true;
+
+        if(arr[grade] == 0)
+        {
+            System.out.println("No students in this grade");
+            return;
+        }
+
         for (Node student : list)
         {
             uniqueName = true;

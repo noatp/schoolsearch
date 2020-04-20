@@ -294,3 +294,68 @@ Analytics: Grade 5
 //expected output: No students in this grade
 
 An: G 5
+
+//TC-31
+//Test requirements NR3
+//Long form command for grade and long form for teacher
+//expected output: 
+//Teacher: ROCIO FAFARD
+//Teacher: JONATHAN ALPERT
+
+Grade: 3 Teacher
+
+//TC-32
+//Test requirements NR3
+//short form command for grade and short form for teacher
+//expected output:
+//Teacher: JAE GAMBREL
+//Teacher: BENITO KERBS
+//Teacher: NANCY NISTENDIRK
+//Teacher: LUZ BODZIONY
+
+G: 6 T
+
+//TC-33
+//Test requirements NR3
+//short form command for grade and long form for teacher with no students in grade
+//expected output: No students in this grade
+
+G: 5 Teacher
+
+//TC-34
+//Test requirements NR4
+//short form command for enrollment
+//expected output:
+//Classroom 101: 1
+//Classroom 102: 5
+//Classroom 103: 2
+//Classroom 104: 2
+//Classroom 105: 6
+//Classroom 106: 2
+//Classroom 107: 7
+//Classroom 108: 11
+//Classroom 109: 5
+//Classroom 110: 2
+//Classroom 111: 9
+//Classroom 112: 8
+
+E
+
+//TC-35
+//Test requirements NR4
+//long form command for enrollment
+//expected output:
+//Classroom 101: 1
+//Classroom 102: 5
+//Classroom 103: 2
+//Classroom 104: 2
+//Classroom 105: 6
+//Classroom 106: 2
+//Classroom 107: 7
+//Classroom 108: 11
+//Classroom 109: 5
+//Classroom 110: 2
+//Classroom 111: 9
+//Classroom 112: 8
+
+Enrollment
