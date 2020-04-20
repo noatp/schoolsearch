@@ -85,6 +85,13 @@ class schoolsearch {
                 case "C:":
                     parseInputForClassroom(in);
                     break;
+
+                case "E":
+                    parseInputForEnrollment(in);
+                    break;
+                case "Enrollment":
+                    parseInputForEnrollment(in);
+                    break;
        
                 case "Q":
                     finishProgram();
@@ -263,6 +270,10 @@ class schoolsearch {
             {
                 searchGrade(number, "l");
             }
+            else if(mode.equals("T") || mode.equals("Teacher"))
+            {
+                searchGrade(number, "t");
+            }
             else
             {
                 wrongInputFormat();
@@ -298,6 +309,41 @@ class schoolsearch {
             {
                 System.out.println("No students in this grade");
             }
+        }
+        else if(mode == "t")
+        {
+            searchGradeTeacher(number);
+        }
+    }
+
+    static void searchGradeTeacher(int grade)
+    {
+        ArrayList<String> teacherNames = new ArrayList<>();
+        String TeacherName;
+        boolean uniqueName = true;
+        for (Node student : list)
+        {
+            uniqueName = true;
+            if(student.getGrade() == grade)
+            {
+                TeacherName = student.getTeachFirst() + " " + student.getTeachLast();
+                for(String name : teacherNames)
+                {
+                    if(name.equals(TeacherName))
+                    {
+                        uniqueName = false;
+                    }
+                }
+                if(uniqueName)
+                {
+                    teacherNames.add(TeacherName);
+                }
+            }
+        }
+
+        for(String name : teacherNames)
+        {
+            System.out.println("Teacher: " + name);
         }
     }
 
@@ -516,6 +562,40 @@ class schoolsearch {
         }
     }
 
+    static void parseInputForEnrollment(Scanner in)
+    {
+        if (in.hasNext())
+        {
+            wrongInputFormat();
+            return;
+        }
+        else
+        {
+            searchClassroomEnrollment();
+        }
+    }
+
+    static void searchClassroomEnrollment()
+    {
+        int[] enrollment = new int[12];
+        int classroom;
+        for(int i = 0; i<12; i++)
+        {
+            enrollment[i] = 0;
+        }
+
+        for(Node student : list)
+        {
+            classroom = student.getRoom();
+            enrollment[classroom-101]++;
+        }
+
+        for(int j = 0; j<12; j++)
+        {
+            System.out.println("Classroom " + (j+101) + ": " + enrollment[j]);
+        }
+    }
+
     static void finishProgram()
     {
         System.out.println("Goodbye!");
@@ -527,10 +607,11 @@ class schoolsearch {
         System.out.println("Only these following command formats are supported:");
         System.out.print("S[tudent]: <lastname>[B[us]]"
               +"\nT[eacher]: <lastname>\nB[us]: <number>"
-              +"\nG[rade]: <number> [H[igh]|L[ow]]\nA[verage]: <number>"
+              +"\nG[rade]: <number> [H[igh]|L[ow]|T[eacher]]\nA[verage]: <number>"
               +"\nI[nfo]" 
               +"\nAn[alyticts]: G[rade] <number>|T[eacher] <lastname>|B[us] <number>" 
               +"\nC[lassroom]: <classroom number> Student|Teacher"
+              +"\nE[nrollment]"
               +"\nQ[uit]\n");
         return;
     }
