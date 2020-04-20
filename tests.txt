@@ -359,3 +359,71 @@ E
 //Classroom 112: 8
 
 Enrollment
+
+//TC-36
+//Test requirement NR1
+//long form command for search for student in classroom
+//expected output:
+//Student: CARLEE DURAND
+
+Classroom: 101 Student
+
+//TC-37
+//Test requirement NR1
+//short form command for search for student in classroom
+//expected output:
+//Student:  NOEL RACANELLO
+//Student:  DIMPLE CORONADO
+//Student:  WAN BOYTER
+//Student:  ROSETTA KEMERER
+//Student:  DEWAYNE DEMARTINI
+
+C: 102 Student
+
+//TC-38
+//Test requirement NR1
+//short form command for search for student in classroom with invalid classroom number
+//expected output
+//Not a valid classroom number
+
+C: 99 Student
+
+//TC-39
+//Test requirement NR1
+//long form command for search for student in classroom with invalid classroom number
+//expected output
+//Not a valid classroom number
+
+Classroom: 1111 Student
+
+//TC-40
+//Test requirement NR2
+//long form command for search for teacher of a classroom
+//expected output
+//Teacher: ADOLPH FALKER
+
+Classroom: 103 Teacher
+
+//TC-41
+//Test requirement NR2
+//short form command for search for teacher of a classroom
+//expected output
+//Teacher: GALE STEIB
+
+C: 104 Teacher
+
+//TC-41
+//Test requirement NR2
+//long form command for search for teacher of a classroom with invalid classroom number
+//expected output
+//Not a valid classroom number
+
+Classroom: 1000 Teacher
+
+//TC-42
+//Test requirement NR2
+//short form command for search for  teacher of a classroom with invalid classroom number
+//expected output
+//Not a valid classroom number
+
+C: 99 Teacher
