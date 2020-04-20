@@ -237,3 +237,67 @@ bash-3.2$ exit
 exit
 
 Script done on Mon Apr 20 14:57:44 2020
+
+Script started on Mon 20 Apr 2020 04:51:17 PM PDT
+]0;syharvey@unix3.csc.calpoly.edu: //home/syharvey/365/schoolsearch[?1034h[01;32msyharvey@unix3[00m:[01;34m~/365/schoolsearch[00m $ vim sy.txt java schoolsearchexit[Kgit push[4Pexitjava schoolsearch
+Please input search instruction:Analytics: Bus 53
+GPA for students on bus route 53
+3.12
+2.99
+2.79
+3.1
+3.14
+3.22
+3.12
+3.02
+3.0
+Please input search instruction:An: B 53
+GPA for students on bus route 53
+3.12
+2.99
+2.79
+3.1
+3.14
+3.22
+3.12
+3.02
+3.0
+Please input search instruction:Analut  ytics  : Bus 50
+No students on this bus route
+Please input search instruction:An: B 50
+No students on this bus route
+Please input search instruction:Analytics: Teacher HAMER
+GPA for students with teacher HAMER
+2.96
+2.88
+2.79
+2.89
+3.22
+2.76
+3.09
+3.01
+2.93
+3.05
+2.92
+Please input search instruction:An: T HAMER
+GPA for students with teacher HAMER
+2.96
+2.88
+2.79
+2.89
+3.22
+2.76
+3.09
+3.01
+2.93
+3.05
+2.92
+Please input search instruction:Analytics: Teacher BRUNO
+No students with this teacher
+Please input search instruction:AnL : Teacher BR          BRUNO
+No students with this teacher
+Please input search instruction:Q
+Goodbye!
+]0;syharvey@unix3.csc.calpoly.edu: //home/syharvey/365/schoolsearch[01;32msyharvey@unix3[00m:[01;34m~/365/schoolsearch[00m $ exit
+
+Script done on Mon 20 Apr 2020 04:52:37 PM PDT

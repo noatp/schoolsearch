@@ -1,5 +1,5 @@
 /*Group#19 
- * Toan Pham, Kattia Chang, Nick Teng
+ * Toan Pham, Kattia Chang, Nick Teng, Syrsha Harvey
  */
 
 import java.util.*;
@@ -462,10 +462,39 @@ class schoolsearch {
          }
        }
     }
+   
+   static void busSearchGPA(int bus){
+      boolean found = false;
+      for(Node n : list){
+         if(n.getBus() == bus){
+            if (!found) {
+               System.out.println("GPA for students on bus route " + bus);
+               found = true;
+            }
+            System.out.println(n.getGpa());
+         }
+      }
+      if (!found)
+         System.out.println("No students on this bus route");
+   }
+   
+   static void teacherSearchGPA(String teacher){
+      boolean found = false;
+      for(Node n : list){
+         if(n.getTeachLast().compareTo(teacher) == 0){ 
+            if (!found) {
+               System.out.println("GPA for students with teacher " + teacher);
+               found = true;
+            }
+            System.out.println(n.getGpa());
+         }
+      }
+      if (!found)
+         System.out.println("No students with this teacher");
+   } 
 
-    static void parseInputForAnalytics(Scanner in){
-
-       if(in.hasNext()){
+   static void parseInputForAnalytics(Scanner in){
+      if(in.hasNext()){
          String cmd = in.next();
          if((cmd.equals("Grade") || cmd.equals("G"))  && in.hasNextInt()){
             int grade = in.nextInt();
@@ -478,14 +507,17 @@ class schoolsearch {
          }
          else if((cmd.equals("Teacher") || cmd.equals("T")) && in.hasNext()){
             String lastname = in.next();
-            //TODO teacherSearchGPA(lastname);
-            System.out.println("cmd: " + cmd + "ln: " + lastname); 
+            teacherSearchGPA(lastname);
+            //System.out.println("cmd: " + cmd + "ln: " + lastname); 
          }
 
          else if((cmd.equals("Bus") || cmd.equals("B")) && in.hasNextInt()){
             int bus = in.nextInt();
-            //TODO busSearchGPA(bus);
-            System.out.println("cmd: " + cmd + "bus: " + bus); 
+            if (bus < 0)
+               System.out.println("Not a valid bus route");
+            else
+               busSearchGPA(bus);
+            //System.out.println("cmd: " + cmd + "bus: " + bus); 
          }
 
          else{

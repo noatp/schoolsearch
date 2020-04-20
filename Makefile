@@ -1,5 +1,5 @@
 #Group#19
-#Toan Chau, Kattia Chang, Nick Teng
+#Toan Chau, Kattia Chang, Nick Teng, Syrsha Harvey
 
 JFLAGS = -g
 JC = javac

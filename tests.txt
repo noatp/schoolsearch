@@ -427,3 +427,103 @@ Classroom: 1000 Teacher
 //Not a valid classroom number
 
 C: 99 Teacher
+
+//TC-43
+//Test requirements NR5
+//Long form command name, existing students on bus route 53
+//expected output:
+//GPA for students on bus route 53
+//3.12
+//2.99
+//2.79
+//3.1
+//3.14
+//3.22
+//3.12
+//3.02
+//3.0
+
+Analytics: Bus 53
+
+//TC-44
+//Test requirements NR5
+//Short form command name, existing students on bus route 53
+//expected output:
+//GPA for students on bus route 53
+//3.12
+//2.99
+//2.79
+//3.1
+//3.14
+//3.22
+//3.12
+//3.02
+//3.0
+
+An: B 53
+
+//TC-45
+//Test requirements NR5
+//Long form command name, no existing students on bus route
+//expected output: No students on this bus route
+
+Analytics: Bus 50
+
+//TC-46
+//Test requirements NR5
+//Short form command name, no existing students on bus route
+//expected output: No students on this bus route
+
+An: B 50
+
+//TC-47
+//Test requirements NR5
+//Long form command name, existing students with teacher Hamer
+//expected output:
+//GPA for students with teacher HAMER
+//2.96
+//2.88
+//2.79
+//2.89
+//3.22
+//2.76
+//3.09
+//3.01
+//2.93
+//3.05
+//2.92
+
+Analytics: Teacher HAMER 
+
+//TC-48
+//Test requirements NR5
+//Short form command name, existing students with teacher Hamer
+//expected output:
+//GPA for students with teacher HAMER
+//2.96
+//2.88
+//2.79
+//2.89
+//3.22
+//2.76
+//3.09
+//3.01
+//2.93
+//3.05
+//2.92
+
+An: T HAMER
+
+//TC-49
+//Test requirements NR5
+//Long form command name, no existing students with teacher Bruno
+//expected output: No students with this teacher
+
+Analytics: Teacher BRUNO
+
+//TC-50
+//Test requirements NR5
+//Short form command name, no existing students with teacher Bruno
+//expected output: No students with this teacher
+
+An: T BRUNO
