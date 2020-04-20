@@ -246,3 +246,51 @@ Teacher: KERBS
 //No teacher with this last name
 
 Teacher: NONAME
+
+//TC-27
+//Test requirements R3, NR5
+//Long form command name, existing students in grade
+//expected output:
+//GPA for students in grade 3
+//3.07
+//2.86
+//3.11
+//3.24
+//2.79
+//3.11
+//2.91
+//3.12
+/3.23
+
+Analytics: Grade 3
+
+//TC-28
+//Test requirements R3, NR5
+//Short form command name, existing students in grade
+//expected output:
+//GPA for students in grade 3
+//3.07
+//2.86
+//3.11
+//3.24
+//2.79
+//3.11
+//2.91
+//3.12
+/3.23
+
+An: G 3
+
+//TC-29
+//Test requirements R3, NR5
+//Long form command name, no existing students in grade
+//expected output: No students in this grade
+
+Analytics: Grade 5
+
+//TC-30
+//Test requirements R3, NR5
+//Short form command name, no existing students in grade
+//expected output: No students in this grade
+
+An: G 5
