@@ -126,3 +126,37 @@ Goodbye!
 sh-4.4$ exit
 
 Script done on 2020-04-15 16:55:26-07:00 [COMMAND_EXIT_CODE="0"]
+
+Script started on 2020-04-19 18:41:27-0700
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ java schoolsearch 
+Please input search instruction:Analytics: Grade 3
+GPA for students in grade 3
+3.07
+2.86
+3.11
+3.24
+2.79
+3.11
+2.91
+3.12
+3.23
+Please input search instruction:Ana : Grade     3
+GPA for students in grade 3
+3.07
+2.86
+3.11
+3.24
+2.79
+3.11
+2.91
+3.12
+3.23
+Please input search instruction:Analytics: Grade 5
+No students in this grade
+Please input search instruction:An: G 5
+No students in this grade
+Please input search instruction:Quit
+Goodbye!
+]0;kattia@theKnight: ~/Documents/csc_365/labs/schoolsearch[01;32mkattia@theKnight[00m:[01;34m~/Documents/csc_365/labs/schoolsearch[00m$ exit
+
+Script done on 2020-04-19 18:42:24-0700
