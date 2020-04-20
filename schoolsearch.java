@@ -389,14 +389,32 @@ class schoolsearch {
         }
     }
 
+    static void gradeSearchGPA(int grade){
+       if(arr[grade] == 0){
+         System.out.println("No students in this grade");
+       }
+       else{
+         System.out.println("GPA for students in grade " + grade);
+         for(Node n : list){
+            if(n.getGrade() == grade){
+               System.out.println(n.getGpa());
+            }
+         }
+       }
+    }
+
     static void parseInputForAnalytics(Scanner in){
 
        if(in.hasNext()){
          String cmd = in.next();
          if((cmd.equals("Grade") || cmd.equals("G"))  && in.hasNextInt()){
             int grade = in.nextInt();
-            //TODO gradeSearchGPA(grade);
-            System.out.println("cmd: " + cmd + "grade: " + grade);    
+            if((grade < 0) || (grade > 6)){
+               System.out.println("Not a valid grade");
+            }
+            else{
+               gradeSearchGPA(grade); 
+            }    
          }
          else if((cmd.equals("Teacher") || cmd.equals("T")) && in.hasNext()){
             String lastname = in.next();
