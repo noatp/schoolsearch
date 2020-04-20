@@ -206,3 +206,34 @@ sh-4.4$ exit
 exit
 
 Script done on 2020-04-20 14:11:55-07:00 [COMMAND_EXIT_CODE="0"]
+
+
+
+Script started on Mon Apr 20 14:55:40 2020
+[?1034hbash-3.2$ java schoolsearch
+Please input search instruction:Classroom: 101 Student
+Student:  CARLEE DURAND
+Please input search instruction:Cl : 102 Student
+Student:  NOEL RACANELLO
+Student:  DIMPLE CORONADO
+Student:  WAN BOYTER
+Student:  ROSETTA KEMERER
+Student:  DEWAYNE DEMARTINI
+Please input search instruction:C: 99 Student
+Not a valid classroom number
+Please input search instruction:C: lasss room: 1111 Student
+Not a valid classroom number
+Please input search instruction:Classroom: 103 S Teacher
+Teacher: ADOLPH FALKER
+Please input search instruction:C: 104 Teacher
+Teacher: GALE STEIB
+Please input search instruction:Classroom: 1000 Teacher
+Not a valid classroom number
+Please input search instruction:C: 104   99 Teah cher
+Not a valid classroom number
+Please input search instruction:Q
+Goodbye!
+bash-3.2$ exit
+exit
+
+Script done on Mon Apr 20 14:57:44 2020
